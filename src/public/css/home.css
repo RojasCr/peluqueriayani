@@ -162,8 +162,8 @@ h1, h2{
 }
 
 #nosotros img{
-    width: 70%;
-    height: 60%;
+    width: 50%;
+    height: 40vh;
 }
 
 #trabajos{
@@ -184,7 +184,7 @@ h1, h2{
 
 #trabajos img{
     width: 50%;
-    /* height: 50%; */
+    height: 40vh;
 }
 
 #contacto{
