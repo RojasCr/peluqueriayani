@@ -1,7 +1,7 @@
 const router = require("../router/Router");
 const app = require("./server");
 
-const port = 8080;
+const port = process.env.PORT;
 
 router(app);
 
