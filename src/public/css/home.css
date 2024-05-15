@@ -212,6 +212,10 @@ h1, h2{
     z-index: 1;
 }
 
+#time{
+    visibility:hidden;
+}
+
 @keyframes apareceIzquierda {
     0%{
         left: -100px;
@@ -265,7 +269,8 @@ h1, h2{
     }
     100%{
         left: -100px;
-        opacity: 0.5;visibility: hidden;
+        opacity: 0.5;
+        visibility: hidden;
     }
 }
 

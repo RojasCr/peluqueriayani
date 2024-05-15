@@ -1,20 +1,60 @@
 const form = document.getElementById("turnosForm");
+let date = document.getElementById("date");
+const horario = document.getElementById("listaHora");
+
+/*date.addEventListener("change", ()=>{
+    //if(date.value){
+        const time = document.getElementById("time");
+        time.style.visibility="visible"
+    //}
+
+})*/
+
+const obtenerDia = (i) => {
+    const hoy = new Date().toLocaleDateString();
+    const hoyArray = hoy.split("/")
+    const posterior = hoy.replace(hoyArray[0], (Number(hoyArray[0])+i).toString())
+    return posterior
+}
+
+const dias = []
+for(i=0; i<6; i++){
+    let dia = obtenerDia(i)
+    dias.push(dia)
+}
+
+const turnos = dias.map(dia => {
+    return {
+        dia,
+        hora: ["08:00", "08:30", "09:00"]
+    }
+})
+
+turnos.forEach(turno => {
+    let option = document.createElement("option");
+    option.value = turno.dia + " " + turno.hora
+    option.innerHTML = turno.dia + " " + turno.hora
+    horario.appendChild(option)
+    //option.innerHTML = turno.dia
+
+})
+
+
 
 const reserves = [];
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     
-    const data = new FormData(form);
+    // const data = new FormData(form);
     
-    const obj = {};
-    data.forEach((value, key) => obj[key] = value);
+    // const obj = {};
+    // data.forEach((value, key) => obj[key] = value);
 
     
-    let date = document.getElementById("date");
-    const horario = document.getElementById("listaHora");
+    
 
-    let selectedTime = obj.time;
-    let id;
+    //let selectedTime = obj.time;
+    /*let id;
 
     switch (selectedTime) {
         case "08:30":
@@ -44,13 +84,13 @@ form.addEventListener("submit", (e) => {
     }
 
     const option = document.getElementById(id);
-    
+    */
 
-    horario.removeChild(option);
+    //horario.removeChild(option);
     //id = `${obj.time.value}`
     //date.min = "2023-04-12"
     //date.value.readOnly = true
-    const reserve = {
+    /*const reserve = {
         date: obj.date,
         time: obj.time
     }
@@ -58,7 +98,9 @@ form.addEventListener("submit", (e) => {
     if(horario.childElementCount === 0){
         const time = document.getElementById("time")
         time.readOnly = true;
-    }
-    console.log(reserves)
+    }*/
+    
+    
 })
+console.log(turnos)
 

@@ -1,5 +1,6 @@
 const router = require("../router/Router");
 const app = require("./server");
+require("dotenv").config();
 
 const port = process.env.PORT;
 
